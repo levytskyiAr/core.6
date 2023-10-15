@@ -46,7 +46,6 @@ REGISTER_EXTENSION = {
     'ZIP': ZIP_ARCHIVES,
     'GZ': GZ_ARCHIVES,
     'TAR': TAR_ARCHIVES,
-    
 }
 
 FOLDERS = []
