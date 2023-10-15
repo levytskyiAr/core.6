@@ -2,20 +2,51 @@ import sys
 from pathlib import Path
 
 JPEG_IMAGES = []
-JPG_IMAGES = []
 PNG_IMAGES = []
+JPG_IMAGES = []
 SVG_IMAGES = []
+AVI_VIDEO = []
+MP4_VIDEO = []
+MOV_VIDEO = []
+MKV_VIDEO = []
+DOC_DOCUMENT = []
+DOCX_DOCUMENT = []
+TXT_DOCUMENT = []
+PDF_DOCUMENT = []
+XLSX_DOCUMENT = []
+PPTX_DOCUMENT = []
 MP3_AUDIO = []
+OGG_AUDIO = []
+WAV_AUDIO = []
+AMR_AUDIO = []
+ZIP_ARCHIVES = []
+GZ_ARCHIVES = []
+TAR_ARCHIVES = []
 MY_OTHER = []
-ARCHIVES = []
+
 
 REGISTER_EXTENSION = {
     'JPEG': JPEG_IMAGES,
     'JPG': JPG_IMAGES,
     'PNG': PNG_IMAGES,
     'SVG': SVG_IMAGES,
+    'AVI': AVI_VIDEO,
+    'MP4': MP4_VIDEO,
+    'MOV': MOV_VIDEO,
+    'MKV': MKV_VIDEO,
     'MP3': MP3_AUDIO,
-    'ZIP': ARCHIVES,
+    'OGG': OGG_AUDIO,
+    'WAV': WAV_AUDIO,
+    'AMR': AMR_AUDIO,
+    'DOCX': DOCX_DOCUMENT,
+    'TXT': TXT_DOCUMENT, 
+    'PDF': PDF_DOCUMENT, 
+    'XLSX': XLSX_DOCUMENT,
+    'PPTX': PPTX_DOCUMENT,
+    'ZIP': ZIP_ARCHIVES,
+    'GZ': GZ_ARCHIVES,
+    'TAR': TAR_ARCHIVES,
+    
 }
 
 FOLDERS = []
@@ -45,7 +76,7 @@ def scan(folder: Path):
                 ext_reg.append(full_name)
                 EXTENSIONS.add(extension)
             except KeyError:
-                UNKNOWN.add(extension)  # .mp4, .mov, .avi
+                UNKNOWN.add(extension)
                 MY_OTHER.append(full_name)
 
 if __name__ == '__main__':
@@ -55,7 +86,7 @@ if __name__ == '__main__':
     print(f'Images jpg: {JPG_IMAGES}')
     print(f'Images png: {PNG_IMAGES}')
     print(f'AUDIO mp3: {MP3_AUDIO}')
-    print(f'Archives zip: {ARCHIVES}')
+    print(f'Archives zip: {ZIP_ARCHIVES}')
 
     print(f'EXTENSIONS: {EXTENSIONS}')
     print(f'UNKNOWN: {UNKNOWN}')
